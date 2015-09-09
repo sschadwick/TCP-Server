@@ -1,0 +1,28 @@
+{
+  "name": "tcp-server",
+  "version": "1.0.0",
+  "description": "tcp server",
+  "main": "tcp_server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sschadwick/TCP-Server.git"
+  },
+  "keywords": [
+    "tcp",
+    "server"
+  ],
+  "author": "Steven Chadwick sschadwick@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sschadwick/TCP-Server/issues"
+  },
+  "homepage": "https://github.com/sschadwick/TCP-Server#readme",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.3.2",
+    "readable-id": "0.0.3"
+  }
+}
