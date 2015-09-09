@@ -14,14 +14,22 @@ describe('tcp server', function() {
 
   before(function(done) {
     logCount = fs.readdirSync(__dirname + '/../logs');
+    done();
+  //   chai.request('localhost:3000')
+  //   .get('/test')
+  //   .end(function(err, res) {
+  //     done();
+  //   })
+  })
+  it('should log the request', function(done) {
     chai.request('localhost:3000')
     .get('/test')
     .end(function(err, res) {
       done();
     })
-  })
-  it('should log the request', function() {
     newlogCount = fs.readdirSync(__dirname + '/../logs');
-    expect(newlogCount.length).to.be.greaterThan(logCount.length)
+    expect(newlogCount.length).to.be.greaterThan(logCount.length);
+    done();
+    //the request should increase the logCount by 1.
   })
 })

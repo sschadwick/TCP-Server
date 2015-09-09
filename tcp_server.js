@@ -5,15 +5,15 @@ var fs = require('fs');
 var rid = require('readable-id'); //creates a unique identifier
 
 var server = net.createServer(function(socket) {
-  var buf = '';
+  var reqData = '';
   var logName = rid(); //create unique id
 
   socket.on('data', function(data) { //fill buf with data
-    buf += data;
+    reqData += data;
   });
 
   socket.on('end', function() {
-    fs.writeFile(__dirname + '/logs/' + logName, buf); //write buf to log
+    fs.writeFile(__dirname + '/logs/' + logName, reqData); //write buf to log
     console.log('Request logged in: ' + logName);
   });
 });
