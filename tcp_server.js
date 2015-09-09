@@ -4,7 +4,7 @@ var net = require('net');
 var fs = require('fs');
 var rid = require('readable-id'); //creates a unique identifier
 
-exports.server = net.createServer(function(socket) {
+var server = net.createServer(function(socket) {
   var buf = '';
   var logName = rid(); //create unique id
 
@@ -18,4 +18,4 @@ exports.server = net.createServer(function(socket) {
   });
 });
 
-exports.server.listen(3000);
+server.listen(3000);
