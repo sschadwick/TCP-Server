@@ -2,7 +2,8 @@
 
 var net = require('net');
 var fs = require('fs');
-var rid = require('readable-id'); //creates a unique identifier
+var d = new Date();
+var logTime = d.toTimeString();
 
 var server = net.createServer(function(socket) {
   var reqData = '';
@@ -13,8 +14,8 @@ var server = net.createServer(function(socket) {
   });
 
   socket.on('end', function() {
-    fs.writeFile(__dirname + '/logs/' + logName, reqData); //write buf to log
-    console.log('Request logged in: ' + logName);
+    fs.writeFile(__dirname + '/logs/' + logTime, reqData); //write buf to log
+    console.log('Request logged in: ' + logTime);
   });
 });
 
