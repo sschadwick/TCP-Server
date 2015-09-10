@@ -20,16 +20,16 @@ describe('tcp server', function() {
   //   .end(function(err, res) {
   //     done();
   //   })
-  })
+  });
   it('should log the request', function(done) {
     chai.request('localhost:3000')
     .get('/test')
     .end(function(err, res) {
       newlogCount = fs.readdirSync(__dirname + '/../logs');
       expect(newlogCount.length).to.be.greaterThan(logCount.length);
-    })
+    });
 
     done();
     //the request should increase the logCount by 1.
-  })
-})
+  });
+});

@@ -7,7 +7,6 @@ var logTime = d.toTimeString();
 
 var server = net.createServer(function(socket) {
   var reqData = '';
-  var logName = rid(); //create unique id
 
   socket.on('data', function(data) { //fill buf with data
     reqData += data;
